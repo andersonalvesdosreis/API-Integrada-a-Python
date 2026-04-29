@@ -74,5 +74,4 @@ while True:
     else:
         print(f'{nome} não consegui entender oque você quis falar, pode repetir?')
         continue
-#253d131753514ed3a2b175743262904
 #print(resposta.json())
