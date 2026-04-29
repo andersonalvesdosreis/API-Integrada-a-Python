@@ -53,7 +53,7 @@ except Exception as e:
     print(f'Ocorreu um erro de conexão: {e}')
 while True:
     pergunta = str(input(f'Me fale {nome}, Você esta sentindo que está calor ou frio? ')).strip().lower()
-    if pergunta in 'calor,quente':
+    if pergunta in ['calor,quente']:
         print(f'Nossa {nome} e nesse calor seria bom mesmo um açai né?')
         pergunta011 = str(input(f'Você gosta de açai {nome}? ')).strip().lower()
         if pergunta011 in 'sim,ss,s,simm':
@@ -62,7 +62,7 @@ while True:
         else:
             print('Ah que pena')
             break
-    elif pergunta in 'frio,gelado':
+    elif pergunta in ['frio,gelado']:
         print(f'Nossa {nome} em um frio desse seria uma boa um chocolate quente né?')
         pergunta021 = str(input('Você gosta de chocolate quente? ')).strip().lower()
         if pergunta021 in 'sim,ss,s,simm':
