@@ -34,6 +34,7 @@ try:
         dados = resposta.json()
         temp = dados["current"]["temp_c"]
         condicao = dados["current"]["condition"]["text"]
+        sensacao = dados['current']['feelslike_c']
         data_completa = dados["location"]["localtime"]
         data, hora = data_completa.split(' ')
         
@@ -41,6 +42,7 @@ try:
         print(f'Olá, {nome}!')
         print(f'Em {cidade}, o tempo está: {condicao}')
         print(f'A temperatura atual é de {temp}°C')
+        print(f'Mesmo a temperatura sendo {temp}°C a sensação termica é {sensacao}')
         print(f'Hoje é dia {data}')
         print(f'O horário em {cidade} é {hora}')
         print('='*40)
@@ -49,5 +51,28 @@ try:
 
 except Exception as e:
     print(f'Ocorreu um erro de conexão: {e}')
+while True:
+    pergunta = str(input(f'Me fale {nome}, Você esta sentindo que está calor ou frio? ')).strip().lower()
+    if pergunta in 'calor,quente':
+        print(f'Nossa {nome} e nesse calor seria bom mesmo um açai né?')
+        pergunta011 = str(input(f'Você gosta de açai {nome}? ')).strip().lower()
+        if pergunta011 in 'sim,ss,s,simm':
+            print('Que legal!')
+            break
+        else:
+            print('Ah que pena')
+            break
+    elif pergunta in 'frio,gelado':
+        print(f'Nossa {nome} em um frio desse seria uma boa um chocolate quente né?')
+        pergunta021 = str(input('Você gosta de chocolate quente? ')).split().lower()
+        if pergunta021 in 'sim,ss,s,simm':
+            print('Que legal!')
+            break
+        else:
+            print('Ah que pena')
+            break
+    else:
+        print(f'{nome} não consegui entender oque você quis falar, pode repetir?')
+        continue
 #253d131753514ed3a2b175743262904
-print(resposta.json())
+#print(resposta.json())
