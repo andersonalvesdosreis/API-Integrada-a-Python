@@ -64,7 +64,7 @@ while True:
             break
     elif pergunta in 'frio,gelado':
         print(f'Nossa {nome} em um frio desse seria uma boa um chocolate quente né?')
-        pergunta021 = str(input('Você gosta de chocolate quente? ')).split().lower()
+        pergunta021 = str(input('Você gosta de chocolate quente? ')).strip().lower()
         if pergunta021 in 'sim,ss,s,simm':
             print('Que legal!')
             break
